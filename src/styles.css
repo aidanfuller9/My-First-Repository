@@ -1,4 +1,12 @@
 .App {
   font-family: sans-serif;
   text-align: center;
+  color: yellow;
+}
+body {
+  background-color: mediumseagreen;
+}
+.img1 {
+  height: 500px;
+  width: 500px;
 }
