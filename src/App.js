@@ -1,17 +1,36 @@
 import "./styles.css";
 
-export default function App() {
+function displayPerson(first, last, pronouns, school, gradYear, color) {
   return (
-    <div className="App">
-      <h1>Howdy</h1>
-      <h2>Year: 2021 School: Oakland Technical High School</h2>
-      <h3></h3>
-      <div>
-        <img
-          class="img1"
-          src="https://i.pinimg.com/originals/e6/43/64/e643645627d0b2f33c2456e2fee0398d.jpg"
-        ></img>
-      </div>
+    <div>
+      {first} {last} {pronouns} {school} {gradYear} {color}
     </div>
   );
+}
+
+export default function App() {
+  let people = [
+    ["Victor", "Lymar", "he/him", "LaunchDarkly", "1923", "green"],
+    ["Ida", "Voong", "she/her", "Oakland Tech", "2022", "blue"],
+    ["Ana", "Rivera", "she/her", "CSU East Bay", "2051", "green"],
+    ["Aidan", "Fuller", "he/him", "Oakland Tech", "2023", "red"],
+    ["Kyle", "Wan", "he/him", "Oakland Tech", "2023", "yeah"],
+    ["Enjun", "Li", "he/him", "John O' Connell", "2022", "black"],
+    ["Luis", "Garcia", "he/him", "CSU East Bay", "2025", "black"],
+    ["Amanda", "Yu", "she/her", "Oakland Tech", "2022", "blue"],
+    ["Yifei", "Du", "he/him", "Balboa HS", "2022", "black"],
+    ["Hector", "Del Valle", "he/him", "John O' Connel", "2022", "gray"]
+  ];
+
+  let pronouns = [["he/him"]];
+
+  let elements = [];
+  for (let person of people) {
+    let first = person[0];
+    let last = person[1];
+    elements.push(
+      displayPerson(first, last, pronouns, school, gradYear, color)
+    );
+  }
+  return <div> {elements} </div>;
 }
